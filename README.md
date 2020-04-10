@@ -22,7 +22,7 @@ Add an ad container where you want to place native ads:
 
 `'siteid'`- Site id.
 
-`'endpoint'`- Endpoint URL, optional parameter.
+`'endpoint'`- Endpoint URL, optional parameter. (String)
 
 `'test'`- Optional parameter for testing ad location `'test': 1`
 
