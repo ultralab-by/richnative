@@ -3,7 +3,7 @@
 
 Before the closing `</body>` tag, add js:
 ```
-<script src="https://cdn.adx1.com/js/ortb/richnative.js"></script>
+<script src="https://adx1js.s3.amazonaws.com/richnative.js"></script>
 <script>
 RichNative.init({
     'pubid': 74488,
