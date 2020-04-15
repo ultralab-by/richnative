@@ -3,18 +3,20 @@
 
 Before the closing `</body>` tag, add js:
 ```
-<script src="https://adx1js.s3.amazonaws.com/richnative.js"></script>
+<script src="https://adx1js.s3.amazonaws.com/nativeads.js"></script>
 <script>
-RichNative.init({
-    'pubid': 74488,
-    'siteid': 150319
-});
+(function() {	
+	NativeAds.init({
+	    'pubid': 74488,
+	    'siteid': 150319
+	});
+})();
 </script>
 ```
 Add an ad container where you want to place native ads:
 
 ```
-<div class="richnative" data-rows="2"></div>
+<div class="native-ads" data-rows="2"></div>
 ```
 
 #### js params
