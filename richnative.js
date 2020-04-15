@@ -1,4 +1,4 @@
-var RichNative = (function() {
+var NativeAds = (function() {
 	var publisher = {};
 
 	var init = function() {
@@ -12,12 +12,12 @@ var RichNative = (function() {
 
 	var _setup = function() {
 		var script = document.createElement('script');
-		script.src = 'https://rtb.adx1.com/system/ip/get?callback=RichNative.processIP';
+		script.src = 'https://rtb.adx1.com/system/ip/get?callback=NativeAds.processIP';
 		document.getElementsByTagName('head')[0].appendChild(script);
 
-		RichNative.processIP = function(ip) {
+		NativeAds.processIP = function(ip) {
 			if (ip) {
-				var adcontainer = document.querySelectorAll('.richnative[data-rows]');
+				var adcontainer = document.querySelectorAll('.native-ads[data-rows]');
 				if (adcontainer.length) {
 					for (var i = 0; i < adcontainer.length; i++) {
 						var adCount = ((adcontainer[i].parentNode.offsetWidth / 180 ^ 0) * adcontainer[i].getAttribute("data-rows"));
@@ -71,10 +71,10 @@ var RichNative = (function() {
 			xmlhttp.onreadystatechange = function() {
 				if (xmlhttp.readyState == 4) {
 					if (xmlhttp.status == 200) {
-						console.log(`RichNative response status: ${xmlhttp.status}`);
+						console.log(`NativeAds response status: ${xmlhttp.status}`);
 						_render(xmlhttp.responseText, adcontainer);
 					} else {
-						console.log(`RichNative response status: ${xmlhttp.status}`);
+						console.log(`NativeAds response status: ${xmlhttp.status}`);
 						_render('no bid', adcontainer);
 					}
 				}
@@ -127,7 +127,7 @@ var RichNative = (function() {
 	};
 	
 	var _resize = function() {
-		var adcontainer = document.querySelectorAll('.richnative[data-rows]');
+		var adcontainer = document.querySelectorAll('.native-ads[data-rows]');
 		for (var w = 0; w < adcontainer.length; w++) {
 			var holder = adcontainer[w].querySelectorAll('.richnative-holder-ad'),
 				collCount = (adcontainer[w].parentNode.offsetWidth / 180 ^ 0),
